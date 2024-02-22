@@ -1,0 +1,74 @@
+<html>
+   
+        <head>
+            <link href="/stylesheets/style.css" rel="stylesheet" />
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,700&display=swap" rel="stylesheet">
+        </head>
+        <body>
+            <div class="maincontainer">
+                <div class="boxtable">
+                    <div class="row">
+                        <div class="col-12 headstyle centerstyle">
+                            <img src="/images/move.png" width="35"/>
+                             <span>All Movies Tickets </span>
+                            <a href="/movies/moviesinterface" style="margin-left: auto; cursor: pointer;"><img src="/images/list.png" width="35"/></a> 
+                            
+                           </div>
+                          <div class="col-12"><hr></div>
+                        </div>
+
+                        <% if(status) { %>
+                            <table class="table table-hover">
+                                <thead  >
+                                    <th >Sn</th>
+                                   
+                                    <th>State</th>
+                                    <th>City</th>
+                                    <th>Cinema</th>
+                                    <th>Screen</th>
+                                    <th>MovieName</th>
+                                    
+                                    <th>ReleaseDate</th>
+                                    <th>TicketPrice </th>
+                                    <th>Status</th>
+                                    <th>Actor</th>
+                                    <th>Actress</th>
+                                    <th>Singer</th>
+                                    <th>Poster</th>
+                                    <th>Update</th>
+                                </thead>
+                                <tbody >
+                                    <% data.map((item,index)=>{ %>
+                                        <tr>
+                                            <td><%=(index+1) %></td>
+                                            
+                                            <td><%=item.stateid %>/<br><%=item.statename%></td>
+                                            <td><%=item.cityid %>/<%=item.cityname%></td>
+                                            <td><%=item.cinemaid %>/<br><%=item.cinemaname%></td>
+                                            <td><%=item.screenid %>/<br><%=item.screenname%></td>
+                                            <td><%=item.moviename %></td>
+                                           
+                                            <td><%=item.releasedate%></td>
+                                            <td><%=item.ticketprice %></td>
+                                            <td><%=item.status%></td>
+                                            <td><%=item.actor%></td>
+                                            <td><%=item.actress%></td>
+                                            <td><%=item.singer%></td>
+                                            <td><a href="/movies/show_picture?movieid=<%=item.movieid%>&moviename=<%=item.moviename%>&picture=<%=item.picture%>" style="text-decoration: none; cursor: pointer;">  <img src="/images/<%=item.picture %>" width="50" heigth="50"></a> </td>
+                                            <td><a href="/movies/display_movies_by_id?movieid=<%=item.movieid%>" style="text-decoration: none; cursor: pointer;">Edit/Delete</a>  </td>
+                                        </tr>
+
+                                        <% }) %>
+                                </tbody>
+                            </table>
+                            <% } else { %>
+                                <h1><%=message %> </h1>
+                                <%} %>
+                
+                </div>
+            </div>
+        </body>
+</html>

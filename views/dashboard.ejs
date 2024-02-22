@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <link href="/stylesheets/style.css" rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/99fc0d74eb.js" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <div class="dmaincontainer">
+            <div class="dbox">
+                <div class="appbarstyle">
+                    <span class="logostyle">Indian Bollywood House</span>
+                    <span class="logoutstyle"><i class="fa-solid fa-right-from-bracket fa-beat"></i><a style="text-decoration: none; margin: 4px; cursor: pointer; color: #fff; " href="/admin/adminlogout" target=>Log Out</a></span>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: row; height:95%; ">
+                <div class="sidebaar">
+                    <div style="display: flex; align-items: center; justify-content: center;margin: 6px;">
+                         <img src="/images/<%=data.picture%>" style="height: 80px; width:80px; border-radius: 95px;" />                    
+                    </div>
+                    <div class="admintextstyle">
+                        <%=data.adminname%>
+                    </div>
+                    <div class="contentstyle">
+                      <div><%=data.emailid%></div>
+                      <div>+91<%=data.mobileno%></div> 
+                    </div>
+                    <div class="menustyle">
+                        <div class="itemstyle"><i class="fa-solid fa-clapperboard fa-beat"></i><a style="text-decoration: none; margin: 4px; color: #000;" href="/movies/moviesinterface" target="mw">New Movie</a></div>
+                        <div class="itemstyle"><i class="fa-solid fa-circle-arrow-right fa-beat"></i><a style="text-decoration: none; margin: 4px; color: #000;" href="/movies/submit_all_movies" target="mw">Show Cards </a></div>
+                        <div class="itemstyle"><i class="fa-solid fa-circle-info fa-shake"></i></i></i><a style="text-decoration: none;  margin: 4px; color: #000;" href="/movies/movies_detail" target="mw">Movie Details</a></div>
+                        <div class="itemstyle"><i class="fa-solid fa-right-from-bracket fa-beat"></i><a style="text-decoration: none; margin: 4px; color: #000;" href="/admin/adminlogout" target=>Log Out</a></div>
+                    </div>
+                </div>
+                <div class="mainbodystyle">
+                    <iframe  name="mw" width="100%" height="100%"  frameborder="0"></iframe>
+                </div>
+            
+            </div>
+        </div>
+        
+    </body>
+</html>
+
+
+
+
